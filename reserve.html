@@ -1,0 +1,475 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reserve a Table | Runique</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Lato:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-page="reserve">
+    <nav class="navbar navbar-expand-lg py-2 sticky-top">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="index.html">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#E65C00"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="me-2"
+          >
+            <path
+              d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"
+            ></path>
+          </svg>
+          RUNIQUE
+        </a>
+        <button
+          class="navbar-toggler navbar-dark border-0"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span
+            class="navbar-toggler-icon"
+            style="width: 1.25em; height: 1.25em"
+          ></span>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav align-items-center">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="menu.html">Menu</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="experience.html">Experience</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="private-dining.html">Private Dining</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">Story</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+            <li class="nav-item ms-lg-4 mt-2 mt-lg-0">
+              <a class="btn btn-orange" href="reserve.html">Reserve</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container mt-4 pt-3 pb-5">
+      <div class="text-center mb-5">
+        <p class="text-orange text-uppercase mb-2 eyebrow">Reservations</p>
+        <h1 class="page-title mb-3">Reserve a Table</h1>
+        <p
+          class="text-secondary mx-auto"
+          style="
+            max-width: 540px;
+            font-weight: 300;
+            font-size: 0.95rem;
+            line-height: 1.7;
+          "
+        >
+          Open Tuesday to Saturday, 5:30 PM to 11:00 PM. Tables release 30 days
+          ahead. Free cancellation up to 24 hours before.
+        </p>
+      </div>
+      <form id="resForm" novalidate>
+        <div class="row g-4">
+          <div class="col-lg-7">
+            <div class="form-panel mb-4">
+              <p class="step-label">Step 1</p>
+              <h3 class="step-title">Party size and date</h3>
+              <div class="row g-2 mb-3">
+                <div class="col-sm-6">
+                  <label class="form-label" for="resGuests">Guests</label>
+                  <select id="resGuests" name="guests" class="form-select">
+                    <option value="1">1 Guest</option>
+                    <option value="2" selected>2 Guests</option>
+                    <option value="3">3 Guests</option>
+                    <option value="4">4 Guests</option>
+                    <option value="5">5 Guests</option>
+                    <option value="6">6 Guests</option>
+                    <option value="7+">7 or more (call us)</option>
+                  </select>
+                </div>
+              </div>
+              <div id="bigParty" class="notice error d-none">
+                Parties of 7 or more, please call us on (043) 756 1234 or send
+                an inquiry on our
+                <a class="footer-link" href="private-dining.html"
+                  >Private Dining page</a
+                >.
+              </div>
+              <label class="form-label">Date</label>
+              <div id="calendarRoot" class="calendar"></div>
+              <span class="field-error" id="errDate"></span>
+              <p class="slot-hint mt-2 mb-0">
+                Closed Sunday and Monday. Fully booked evenings are greyed out.
+              </p>
+            </div>
+            <div class="form-panel mb-4">
+              <p class="step-label">Step 2</p>
+              <h3 class="step-title">Choose a time</h3>
+              <div id="slotsRoot"></div>
+              <span class="field-error" id="errTime"></span>
+            </div>
+            <div class="form-panel">
+              <p class="step-label">Step 3</p>
+              <h3 class="step-title">Seating preference</h3>
+              <div id="seatingRoot"></div>
+              <span class="field-error" id="errSeating"></span>
+            </div>
+          </div>
+          <div class="col-lg-5">
+            <div class="form-panel sticky-top" style="top: 90px">
+              <p class="step-label">Step 4</p>
+              <h3 class="step-title">Your details</h3>
+              <div class="mb-3">
+                <label class="form-label" for="resName">Full Name</label>
+                <input
+                  id="resName"
+                  name="name"
+                  type="text"
+                  class="form-control"
+                  placeholder="Juan Dela Cruz"
+                  autocomplete="name"
+                />
+              </div>
+              <div class="mb-3">
+                <label class="form-label" for="resEmail">Email</label>
+                <input
+                  id="resEmail"
+                  name="email"
+                  type="email"
+                  class="form-control"
+                  placeholder="juan@email.com"
+                  autocomplete="email"
+                />
+              </div>
+              <div class="mb-3">
+                <label class="form-label" for="resPhone">Phone</label>
+                <input
+                  id="resPhone"
+                  name="phone"
+                  type="tel"
+                  class="form-control"
+                  placeholder="0917 123 4567"
+                  autocomplete="tel"
+                />
+              </div>
+              <div class="mb-3">
+                <label class="form-label" for="resOccasion">Occasion</label>
+                <select id="resOccasion" name="occasion" class="form-select">
+                  <option>None</option>
+                  <option>Birthday</option>
+                  <option>Anniversary</option>
+                  <option>Business Dinner</option>
+                  <option>Date Night</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div class="mb-4">
+                <label class="form-label" for="resNotes"
+                  >Special requests or dietary needs</label
+                >
+                <textarea
+                  id="resNotes"
+                  name="notes"
+                  class="form-control"
+                  rows="3"
+                  maxlength="300"
+                  placeholder="Allergies, high chair, celebration details..."
+                ></textarea>
+              </div>
+              <p class="form-label">Your table</p>
+              <div id="resSummary" class="summary-card mb-4"></div>
+              <div class="form-check mb-1">
+                <input class="form-check-input" type="checkbox" id="resTerms" />
+                <label
+                  class="form-check-label small text-secondary"
+                  for="resTerms"
+                  >I agree to the
+                  <a class="footer-link" href="terms.html" target="_blank"
+                    >Terms of Service</a
+                  >
+                  and
+                  <a
+                    class="footer-link"
+                    href="privacy-policy.html"
+                    target="_blank"
+                    >Privacy Policy</a
+                  >.</label
+                >
+              </div>
+              <span class="field-error mb-3" id="errTerms"></span>
+              <div id="formError" class="notice error d-none mb-3"></div>
+              <button type="submit" class="btn btn-orange w-100" id="resSubmit">
+                Confirm Reservation
+              </button>
+              <p
+                class="text-secondary text-center mt-3 mb-0"
+                style="font-size: 0.7rem; font-weight: 300"
+              >
+                Already booked?
+                <a class="footer-link" href="manage-reservation.html"
+                  >Manage your reservation</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </form>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row g-5 mb-5">
+          <div class="col-lg-4">
+            <a
+              class="navbar-brand d-flex align-items-center mb-3"
+              href="index.html"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#E65C00"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="me-2"
+              >
+                <path
+                  d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"
+                ></path>
+              </svg>
+              RUNIQUE
+            </a>
+            <p
+              class="text-secondary small mb-4"
+              style="max-width: 280px; line-height: 1.6; font-weight: 300"
+            >
+              Modern Filipino fine dining, cooked over live fire. Preserving
+              heirloom recipes through contemporary techniques.
+            </p>
+            <div class="d-flex gap-4">
+              <a
+                href="#"
+                class="footer-link small text-uppercase"
+                style="
+                  letter-spacing: 2px;
+                  font-weight: 700;
+                  font-size: 0.65rem;
+                "
+                >Instagram</a
+              >
+              <a
+                href="#"
+                class="footer-link small text-uppercase"
+                style="
+                  letter-spacing: 2px;
+                  font-weight: 700;
+                  font-size: 0.65rem;
+                "
+                >Facebook</a
+              >
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-6">
+            <h6
+              class="text-secondary text-uppercase mb-4"
+              style="font-size: 0.65rem; letter-spacing: 2px; font-weight: 700"
+            >
+              Explore
+            </h6>
+            <ul class="list-unstyled mb-0 d-flex flex-column gap-3">
+              <li>
+                <a
+                  href="menu.html"
+                  class="footer-link small"
+                  style="font-weight: 300"
+                  >Menu</a
+                >
+              </li>
+              <li>
+                <a
+                  href="experience.html"
+                  class="footer-link small"
+                  style="font-weight: 300"
+                  >Experience</a
+                >
+              </li>
+              <li>
+                <a
+                  href="private-dining.html"
+                  class="footer-link small"
+                  style="font-weight: 300"
+                  >Private Dining</a
+                >
+              </li>
+              <li>
+                <a
+                  href="about.html"
+                  class="footer-link small"
+                  style="font-weight: 300"
+                  >Our Story</a
+                >
+              </li>
+              <li>
+                <a
+                  href="availability.html"
+                  class="footer-link small"
+                  style="font-weight: 300"
+                  >Check Availability</a
+                >
+              </li>
+              <li>
+                <a
+                  href="manage-reservation.html"
+                  class="footer-link small"
+                  style="font-weight: 300"
+                  >Manage Reservation</a
+                >
+              </li>
+              <li>
+                <a
+                  href="faq.html"
+                  class="footer-link small"
+                  style="font-weight: 300"
+                  >FAQ</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <h6
+              class="text-secondary text-uppercase mb-4"
+              style="font-size: 0.65rem; letter-spacing: 2px; font-weight: 700"
+            >
+              Visit Us
+            </h6>
+            <p
+              class="text-light mb-1 small"
+              style="font-weight: 300; line-height: 1.6"
+            >
+              Ground Floor, Summit Plaza<br />Pres. J.P. Laurel Highway<br />Lipa
+              City, Batangas 4218
+            </p>
+            <div class="mt-4">
+              <p class="text-light mb-1 small" style="font-weight: 300">
+                (043) 756 1234
+              </p>
+              <p class="text-light mb-1 small" style="font-weight: 300">
+                +63 917 123 4567
+              </p>
+              <p class="text-secondary small mt-2" style="font-weight: 300">
+                mabuhay@runique.ph
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <h6
+              class="text-secondary text-uppercase mb-4"
+              style="font-size: 0.65rem; letter-spacing: 2px; font-weight: 700"
+            >
+              Newsletter
+            </h6>
+            <p
+              class="text-secondary small mb-3"
+              style="font-weight: 300; line-height: 1.6"
+            >
+              Join our list for exclusive tasting menu announcements and event
+              invites.
+            </p>
+            <form
+              class="d-flex gap-2"
+              action="newsletter-success.html"
+              method="get"
+            >
+              <input
+                type="email"
+                name="email"
+                class="form-control"
+                placeholder="Email Address"
+                required
+                style="
+                  background-color: rgba(0, 0, 0, 0.3);
+                  border: 1px solid #444;
+                  color: #e8e5e1;
+                  border-radius: 0;
+                  font-size: 0.75rem;
+                "
+              />
+              <button
+                type="submit"
+                class="btn btn-orange"
+                style="padding: 8px 16px"
+              >
+                Join
+              </button>
+            </form>
+          </div>
+        </div>
+        <div
+          class="row pt-4 border-top"
+          style="border-color: rgba(255, 255, 255, 0.05) !important"
+        >
+          <div class="col-md-6 text-center text-md-start mb-2 mb-md-0">
+            <p
+              class="text-secondary small mb-0"
+              style="font-size: 0.65rem; font-weight: 300"
+            >
+              &copy; 2026 Runique Modern Filipino Kitchen. All rights reserved.
+            </p>
+          </div>
+          <div class="col-md-6 text-center text-md-end">
+            <a
+              href="privacy-policy.html"
+              class="footer-link small me-3"
+              style="font-size: 0.65rem; font-weight: 300"
+              >Privacy Policy</a
+            >
+            <a
+              href="terms.html"
+              class="footer-link small me-3"
+              style="font-size: 0.65rem; font-weight: 300"
+              >Terms of Service</a
+            >
+            <a
+              href="faq.html"
+              class="footer-link small"
+              style="font-size: 0.65rem; font-weight: 300"
+              >FAQ</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

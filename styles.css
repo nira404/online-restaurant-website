@@ -1,0 +1,631 @@
+/* Base Theme & Prevent Horizontal Scroll */
+body {
+  background-image:
+    linear-gradient(rgba(18, 16, 14, 0.88), rgba(18, 16, 14, 0.95)),
+    url("https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=1920&auto=format&fit=crop");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #e8e5e1;
+  font-family: "Lato", sans-serif;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* Constrain Layout Width for Editorial Feel */
+.container {
+  max-width: 1100px !important;
+}
+
+/* Typography Upgrade */
+h1,
+h2,
+h3,
+h4,
+h5,
+.brand-font {
+  font-family: "Playfair Display", serif;
+  font-weight: 500;
+}
+
+.text-orange {
+  color: #e65c00;
+}
+
+/* Scaled Down Buttons */
+.btn-orange {
+  background-color: #e65c00;
+  color: #fff;
+  border: none;
+  border-radius: 0;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  transition: all 0.3s ease;
+}
+
+.btn-orange:hover {
+  background-color: #cc5200;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(230, 92, 0, 0.4);
+}
+
+.btn-outline-light {
+  border-radius: 0;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  border-color: #e8e5e1;
+  color: #e8e5e1;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-light:hover {
+  background-color: #e8e5e1;
+  color: #12100e;
+  transform: translateY(-2px);
+}
+
+/* Navbar */
+.navbar {
+  background-color: rgba(18, 16, 14, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  z-index: 1050;
+}
+
+.navbar-nav .nav-link {
+  color: #e8e5e1;
+  text-transform: uppercase;
+  font-size: 0.65rem;
+  font-weight: 400;
+  letter-spacing: 2px;
+  margin: 0 10px;
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #e65c00;
+}
+
+.navbar-brand {
+  font-size: 1.25rem;
+  color: #e8e5e1 !important;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+/* Compact Hero Section */
+.hero-section {
+  padding: 6rem 0 5rem 0;
+}
+
+/* Fluid Typography: Shrinks cleanly on tablet/mobile */
+.hero-title {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+
+.hero-title em {
+  font-style: italic;
+  color: #d4cfc9;
+  font-weight: 400;
+}
+
+/* Interactive Menu Grid */
+.menu-item-wrapper {
+  cursor: pointer;
+}
+
+.image-container {
+  overflow: hidden;
+  margin-bottom: 0.85rem;
+  position: relative;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.menu-card-img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  transition: transform 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.menu-item-wrapper:hover .menu-card-img {
+  transform: scale(1.08);
+}
+
+.chef-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: rgba(20, 18, 16, 0.95);
+  color: #e8e5e1;
+  padding: 5px 10px;
+  font-size: 0.55rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  z-index: 2;
+}
+
+/* Scaled Down Reservation Sidebar & Forms */
+.reservation-sidebar {
+  background-color: rgba(20, 18, 16, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 2rem 1.75rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  border-radius: 2px;
+  z-index: 10;
+  top: 90px !important;
+}
+
+.form-control,
+.form-select {
+  background-color: rgba(0, 0, 0, 0.3);
+  border: 1px solid #444;
+  color: #e8e5e1;
+  border-radius: 0;
+  padding: 0.65rem;
+  font-size: 0.75rem;
+  font-family: "Lato", sans-serif;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus,
+.form-select:focus {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  border-color: #e65c00;
+  box-shadow: none;
+}
+
+.form-control::placeholder {
+  color: #777;
+  font-weight: 300;
+}
+
+.form-label {
+  text-transform: uppercase;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: #999;
+  margin-bottom: 0.4rem;
+}
+
+.time-slot {
+  border: 1px solid #444;
+  padding: 8px;
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 400;
+  cursor: pointer;
+  color: #999;
+  transition: all 0.2s ease;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.time-slot:hover {
+  border-color: #aaa;
+  color: #e8e5e1;
+}
+
+.time-slot.active {
+  border-color: #e65c00;
+  color: #e65c00;
+  background-color: rgba(230, 92, 0, 0.15);
+}
+
+/* Footer */
+.site-footer {
+  background-color: #0f0d0c;
+  padding: 3rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  margin-top: 4rem;
+}
+
+.footer-link {
+  color: #888;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+  color: #e65c00;
+}
+
+/* Responsive Tablet & Mobile Fixes */
+@media (max-width: 991px) {
+  .reservation-sidebar {
+    position: static !important; /* Turns off sticky behavior on tablet */
+    margin-top: 1rem;
+  }
+  .hero-section {
+    padding: 4rem 0 3rem 0;
+  }
+}
+
+.faq-item {
+  background-color: rgba(20, 18, 16, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 2px !important;
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+/* Base Accordion Button */
+.accordion-button {
+  background-color: transparent !important;
+  color: #e8e5e1 !important;
+  font-family: "Playfair Display", serif;
+  font-size: 1.25rem;
+  box-shadow: none !important;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+/* Active/Open Accordion Button */
+.accordion-button:not(.collapsed) {
+  color: #e65c00 !important;
+  background-color: rgba(230, 92, 0, 0.05) !important;
+}
+
+/* Invert the black dropdown arrow to white */
+.accordion-button::after {
+  filter: brightness(0) invert(1);
+}
+
+/* Accordion Body Text */
+.accordion-body {
+  color: #bbb;
+  font-weight: 300;
+  line-height: 1.8;
+  padding: 0 1.5rem 1.5rem 1.5rem;
+  border-top: none;
+}
+
+.form-panel {
+  background-color: rgba(20, 18, 16, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 2rem;
+  border-radius: 2px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.step-label,
+.eyebrow {
+  color: #e65c00;
+  text-transform: uppercase;
+  font-size: 0.65rem;
+  letter-spacing: 2px;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.step-title,
+.page-title {
+  font-family: "Playfair Display", serif;
+  font-size: 1.75rem;
+  margin-bottom: 1.5rem;
+  color: #e8e5e1;
+}
+
+/* Custom Calendar Grid */
+.cal-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 0.5rem;
+}
+
+.cal-title {
+  font-family: "Lato", sans-serif;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0;
+}
+
+.cal-nav {
+  background: none;
+  border: none;
+  color: #e65c00;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.cal-nav:disabled {
+  color: #444;
+  cursor: not-allowed;
+}
+
+.cal-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+  text-align: center;
+}
+
+.cal-dow {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  color: #999;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.cal-day {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid #444;
+  color: #e8e5e1;
+  padding: 10px 0;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-radius: 2px;
+}
+
+.cal-day:hover:not(.disabled) {
+  border-color: #e65c00;
+  background: rgba(230, 92, 0, 0.1);
+}
+
+.cal-day.selected {
+  background-color: #e65c00;
+  color: #fff;
+  border-color: #e65c00;
+}
+
+.cal-day.disabled {
+  opacity: 0.2;
+  cursor: not-allowed;
+}
+
+/* Seating Preference Cards */
+.seat-card {
+  display: flex;
+  flex-direction: column;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid #444;
+  padding: 1.25rem 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  height: 100%;
+  text-align: center;
+  border-radius: 2px;
+  width: 100%;
+}
+
+.seat-card:hover:not(.disabled) {
+  border-color: #aaa;
+}
+
+.seat-card.active {
+  border-color: #e65c00;
+  background: rgba(230, 92, 0, 0.15);
+}
+
+.seat-card.disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.seat-title {
+  font-weight: 700;
+  color: #e8e5e1;
+  margin-bottom: 0.4rem;
+  font-size: 0.9rem;
+}
+
+.seat-note {
+  font-size: 0.75rem;
+  color: #999;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.seat-meta {
+  font-size: 0.65rem;
+  color: #e65c00;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-top: auto;
+  font-weight: 700;
+}
+
+/* Summary Box */
+.summary-card {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 1.5rem;
+  border-radius: 2px;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 0.75rem 0;
+  font-size: 0.85rem;
+}
+
+.summary-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.summary-row span {
+  color: #999;
+}
+
+.summary-row strong {
+  color: #e8e5e1;
+  font-weight: 400;
+  text-align: right;
+}
+
+/* Notices & Error Handling */
+.field-error {
+  color: #ff4d4d;
+  font-size: 0.75rem;
+  margin-top: 0.4rem;
+  display: block;
+}
+
+.notice {
+  padding: 1rem;
+  font-size: 0.85rem;
+  border-radius: 2px;
+  line-height: 1.5;
+}
+
+.notice.error {
+  background: rgba(255, 77, 77, 0.1);
+  border-left: 3px solid #ff4d4d;
+  color: #ff4d4d;
+}
+
+.notice.success {
+  background: rgba(46, 204, 113, 0.1);
+  border-left: 3px solid #2ecc71;
+  color: #2ecc71;
+}
+
+/* Availability Legend */
+.legend {
+  display: flex;
+  gap: 1.25rem;
+  justify-content: center;
+  font-size: 0.7rem;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.legend-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 6px;
+}
+
+.st-open {
+  background-color: #2ecc71;
+}
+.st-limited {
+  background-color: #f1c40f;
+}
+.st-full {
+  background-color: #e74c3c;
+}
+.st-closed {
+  background-color: #555;
+}
+
+/* Status Badge for Manage Reservation */
+.status-badge {
+  padding: 5px 10px;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 700;
+  border-radius: 2px;
+}
+.status-badge.confirmed {
+  background-color: rgba(46, 204, 113, 0.15);
+  color: #2ecc71;
+  border: 1px solid rgba(46, 204, 113, 0.3);
+}
+.status-badge.cancelled {
+  background-color: rgba(255, 77, 77, 0.15);
+  color: #ff4d4d;
+  border: 1px solid rgba(255, 77, 77, 0.3);
+}
+
+/* Miscellaneous Helpers */
+.slot-hint {
+  font-size: 0.75rem;
+  color: #777;
+  margin-top: 10px;
+}
+.ref-code {
+  font-family: monospace;
+  font-size: 1.5rem;
+  color: #e65c00;
+  letter-spacing: 2px;
+}
+.check-ring {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 2px solid #2ecc71;
+  color: #2ecc71;
+  margin-bottom: 1rem;
+}
+.check-ring.cancelled {
+  border-color: #ff4d4d;
+  color: #ff4d4d;
+}
+
+.form-select option {
+  background-color: #1a1816; /* Dark background to match your theme */
+  color: #e8e5e1; /* Light text */
+}
+
+/* Fix for date picker icon clicking (optional but recommended) */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  cursor: pointer;
+}
+
+.menu-card {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+/* 2. Prevent the image from breaking out of its box when it zooms */
+.menu-card .image-container {
+  overflow: hidden;
+  position: relative;
+}
+
+/* Set up the smooth zoom timing */
+.menu-card .menu-card-img {
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* 3. The actual zoom: Scale the image up by 8% when hovered */
+.menu-card:hover .menu-card-img {
+  transform: scale(1.08);
+}
+
+/* Optional: Make the border of the image glow slightly orange */
+.menu-card:hover .image-container {
+  box-shadow: 0 8px 25px rgba(230, 92, 0, 0.25) !important;
+  transition: box-shadow 0.4s ease;
+}
+
+/* Optional: Change the dish title to orange when hovered */
+.menu-card h4 {
+  transition: color 0.3s ease;
+}
+
+.menu-card:hover h4 {
+  color: #e65c00 !important;
+}

@@ -1,0 +1,583 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home | Runique</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Lato:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg py-2 sticky-top">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="index.html">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#E65C00"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="me-2"
+          >
+            <path
+              d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"
+            ></path>
+          </svg>
+          RUNIQUE
+        </a>
+        <button
+          class="navbar-toggler navbar-dark border-0"
+          type="button"
+          onclick="window.location.href = 'reserve  .html'"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span
+            class="navbar-toggler-icon"
+            style="width: 1.25em; height: 1.25em"
+          ></span>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav align-items-center">
+            <li class="nav-item">
+              <a class="nav-link text-orange" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="menu.html">Menu</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="experience.html">Experience</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="private-dining.html">Private Dining</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">Story</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+            <li class="nav-item ms-lg-4 mt-2 mt-lg-0">
+              <a class="btn btn-orange" href="reserve.html">Reserve</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <section class="container hero-section">
+      <div class="row">
+        <div class="col-lg-8">
+          <p
+            class="text-orange text-uppercase mb-2"
+            style="letter-spacing: 3px; font-size: 0.65rem; font-weight: 700"
+          >
+            Modern Filipino Kitchen · Est. 2011
+          </p>
+          <h1 class="hero-title">An evening,<br /><em>slowly savored.</em></h1>
+          <p
+            class="text-secondary mb-4"
+            style="
+              max-width: 480px;
+              font-size: 0.95rem;
+              line-height: 1.7;
+              font-weight: 300;
+            "
+          >
+            Heirloom Filipino recipes, reimagined over live fire. Adobo, lechon
+            and kaldereta, plated with care in a candlelit room that hushes the
+            world outside.
+          </p>
+          <div class="d-flex gap-2 flex-wrap">
+            <a href="reserve.html" class="btn btn-orange">Reserve a Table</a>
+            <a href="menu.html" class="btn btn-outline-light">View Menu</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container">
+      <div class="row g-4">
+        <div class="col-lg-8">
+          <div
+            class="d-flex justify-content-between align-items-end mb-3 border-bottom border-secondary pb-2"
+          >
+            <div>
+              <p
+                class="text-orange text-uppercase mb-1"
+                style="
+                  font-size: 0.65rem;
+                  letter-spacing: 2px;
+                  font-weight: 700;
+                "
+              >
+                Kainan · The Menu
+              </p>
+              <h2
+                style="
+                  font-size: clamp(1.5rem, 3vw, 2rem);
+                  letter-spacing: -0.5px;
+                  margin-bottom: 0;
+                "
+              >
+                Mula sa apoy
+              </h2>
+            </div>
+            <a
+              href="menu.html"
+              class="text-secondary text-uppercase text-decoration-none footer-link pb-1"
+              style="font-size: 0.65rem; letter-spacing: 2px; font-weight: 700"
+              >Full Menu →</a
+            >
+          </div>
+
+          <div class="row g-4 mt-1">
+            <div
+              class="col-md-6 menu-item-wrapper"
+              onclick="window.location.href = 'menu.html'"
+            >
+              <div class="image-container">
+                <span class="chef-badge">Chef's Pick</span>
+                <img
+                  src="pictures/caldereta.webp"
+                  class="menu-card-img"
+                  alt="Beef Kaldereta"
+                />
+              </div>
+              <div
+                class="d-flex justify-content-between align-items-baseline mb-1"
+              >
+                <h3 class="mb-0 h6" style="font-size: 1.1rem">
+                  Beef Kaldereta
+                </h3>
+                <span
+                  class="text-orange font-monospace"
+                  style="font-size: 0.9rem"
+                  >₱950</span
+                >
+              </div>
+              <p
+                class="text-secondary small"
+                style="line-height: 1.5; font-weight: 300"
+              >
+                Slow-braised short rib, liver pâté, bell pepper, olives
+              </p>
+            </div>
+
+            <div
+              class="col-md-6 menu-item-wrapper"
+              onclick="window.location.href = 'menu.html'"
+            >
+              <div class="image-container">
+                <img
+                  src="pictures/liempo.webp"
+                  class="menu-card-img"
+                  alt="Inihaw na Liempo"
+                />
+              </div>
+              <div
+                class="d-flex justify-content-between align-items-baseline mb-1"
+              >
+                <h3 class="mb-0 h6" style="font-size: 1.1rem">
+                  Inihaw na Liempo
+                </h3>
+                <span
+                  class="text-orange font-monospace"
+                  style="font-size: 0.9rem"
+                  >₱650</span
+                >
+              </div>
+              <p
+                class="text-secondary small"
+                style="line-height: 1.5; font-weight: 300"
+              >
+                Charcoal pork belly, calamansi, banana-ketchup glaze
+              </p>
+            </div>
+
+            <div
+              class="col-md-6 menu-item-wrapper"
+              onclick="window.location.href = 'menu.html'"
+            >
+              <div class="image-container">
+                <img
+                  src="pictures/lechon.webp"
+                  class="menu-card-img"
+                  alt="Lechon Kawali"
+                />
+              </div>
+              <div
+                class="d-flex justify-content-between align-items-baseline mb-1"
+              >
+                <h3 class="mb-0 h6" style="font-size: 1.1rem">Lechon Kawali</h3>
+                <span
+                  class="text-orange font-monospace"
+                  style="font-size: 0.9rem"
+                  >₱750</span
+                >
+              </div>
+              <p
+                class="text-secondary small"
+                style="line-height: 1.5; font-weight: 300"
+              >
+                Crispy pork belly, garlic vinegar, liver sauce
+              </p>
+            </div>
+
+            <div
+              class="col-md-6 menu-item-wrapper"
+              onclick="window.location.href = 'menu.html'"
+            >
+              <div class="image-container">
+                <img
+                  src="pictures/kare.webp"
+                  class="menu-card-img"
+                  alt="Kare-Kare"
+                />
+              </div>
+              <div
+                class="d-flex justify-content-between align-items-baseline mb-1"
+              >
+                <h3 class="mb-0 h6" style="font-size: 1.1rem">Kare-Kare</h3>
+                <span
+                  class="text-orange font-monospace"
+                  style="font-size: 0.9rem"
+                  >₱850</span
+                >
+              </div>
+              <p
+                class="text-secondary small"
+                style="line-height: 1.5; font-weight: 300"
+              >
+                Oxtail peanut stew, bok choy, string beans, house-made bagoong
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="reservation-sidebar sticky-top">
+            <p
+              class="text-orange text-uppercase mb-2"
+              style="font-size: 0.6rem; letter-spacing: 2px; font-weight: 700"
+            >
+              Reservations
+            </p>
+            <h3 class="mb-2" style="font-size: 1.75rem">Secure your table</h3>
+            <p
+              class="text-secondary small mb-4"
+              style="line-height: 1.5; font-weight: 300"
+            >
+              Tables release 30 days ahead. Parties of 7+ please call.
+            </p>
+            <form action="reserve.html">
+              <div class="mb-3">
+                <label class="form-label">Full Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Juan Dela Cruz"
+                />
+              </div>
+              <div class="row g-2 mb-3">
+                <div class="col-6">
+                  <label class="form-label">Email</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    placeholder="juan@email.com"
+                  />
+                </div>
+                <div class="col-6">
+                  <label class="form-label">Phone</label>
+                  <input
+                    type="tel"
+                    class="form-control"
+                    placeholder="0917 123 4567"
+                  />
+                </div>
+              </div>
+              <div class="row g-2 mb-3">
+                <div class="col-6">
+                  <label class="form-label">Date</label>
+                  <input type="date" class="form-control" value="2026-10-24" />
+                </div>
+                <div class="col-6">
+                  <label class="form-label">Guests</label>
+                  <select class="form-select">
+                    <option>2 People</option>
+                    <option>3 People</option>
+                    <option>4 People</option>
+                  </select>
+                </div>
+              </div>
+              <label class="form-label">Time (PM)</label>
+              <div class="row g-2 mb-4">
+                <div class="col-4"><div class="time-slot">5:30</div></div>
+                <div class="col-4"><div class="time-slot">6:15</div></div>
+                <div class="col-4">
+                  <div class="time-slot active">7:00</div>
+                </div>
+                <div class="col-4"><div class="time-slot">7:45</div></div>
+                <div class="col-4"><div class="time-slot">8:30</div></div>
+                <div class="col-4"><div class="time-slot">9:15</div></div>
+              </div>
+              <button type="submit" class="btn btn-orange w-100 mb-2">
+                Request Reservation
+              </button>
+              <p
+                class="text-secondary text-center"
+                style="font-size: 0.65rem; font-weight: 300; margin-bottom: 0"
+              >
+                Free cancellation up to 24 hours before.
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row g-5 mb-5">
+          <div class="col-lg-4">
+            <a
+              class="navbar-brand d-flex align-items-center mb-3"
+              href="index.html"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#E65C00"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="me-2"
+              >
+                <path
+                  d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"
+                ></path>
+              </svg>
+              RUNIQUE
+            </a>
+            <p
+              class="text-secondary small mb-4"
+              style="max-width: 280px; line-height: 1.6; font-weight: 300"
+            >
+              Modern Filipino fine dining, cooked over live fire. Preserving
+              heirloom recipes through contemporary techniques.
+            </p>
+            <div class="d-flex gap-4">
+              <a
+                href="#"
+                class="footer-link small text-uppercase"
+                style="
+                  letter-spacing: 2px;
+                  font-weight: 700;
+                  font-size: 0.65rem;
+                "
+                >Instagram</a
+              >
+              <a
+                href="#"
+                class="footer-link small text-uppercase"
+                style="
+                  letter-spacing: 2px;
+                  font-weight: 700;
+                  font-size: 0.65rem;
+                "
+                >Facebook</a
+              >
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-6">
+            <h6
+              class="text-secondary text-uppercase mb-4"
+              style="font-size: 0.65rem; letter-spacing: 2px; font-weight: 700"
+            >
+              Explore
+            </h6>
+            <ul class="list-unstyled mb-0 d-flex flex-column gap-3">
+              <li>
+                <a
+                  href="menu.html"
+                  class="footer-link small"
+                  style="font-weight: 300"
+                  >Menu</a
+                >
+              </li>
+              <li>
+                <a
+                  href="experience.html"
+                  class="footer-link small"
+                  style="font-weight: 300"
+                  >Experience</a
+                >
+              </li>
+              <li>
+                <a
+                  href="private-dining.html"
+                  class="footer-link small"
+                  style="font-weight: 300"
+                  >Private Dining</a
+                >
+              </li>
+              <li>
+                <a
+                  href="about.html"
+                  class="footer-link small"
+                  style="font-weight: 300"
+                  >Our Story</a
+                >
+              </li>
+              <li>
+                <a
+                  href="availability.html"
+                  class="footer-link small"
+                  style="font-weight: 300"
+                  >Check Availability</a
+                >
+              </li>
+              <li>
+                <a
+                  href="manage-reservation.html"
+                  class="footer-link small"
+                  style="font-weight: 300"
+                  >Manage Reservation</a
+                >
+              </li>
+              <li>
+                <a
+                  href="faq.html"
+                  class="footer-link small"
+                  style="font-weight: 300"
+                  >FAQ</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <h6
+              class="text-secondary text-uppercase mb-4"
+              style="font-size: 0.65rem; letter-spacing: 2px; font-weight: 700"
+            >
+              Visit Us
+            </h6>
+            <p
+              class="text-light mb-1 small"
+              style="font-weight: 300; line-height: 1.6"
+            >
+              Ground Floor, Summit Plaza<br />Pres. J.P. Laurel Highway<br />Lipa
+              City, Batangas 4218
+            </p>
+            <div class="mt-4">
+              <p class="text-light mb-1 small" style="font-weight: 300">
+                (043) 756 1234
+              </p>
+              <p class="text-light mb-1 small" style="font-weight: 300">
+                +63 917 123 4567
+              </p>
+              <p class="text-secondary small mt-2" style="font-weight: 300">
+                mabuhay@runique.ph
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <h6
+              class="text-secondary text-uppercase mb-4"
+              style="font-size: 0.65rem; letter-spacing: 2px; font-weight: 700"
+            >
+              Newsletter
+            </h6>
+            <p
+              class="text-secondary small mb-3"
+              style="font-weight: 300; line-height: 1.6"
+            >
+              Join our list for exclusive tasting menu announcements and event
+              invites.
+            </p>
+            <form
+              class="d-flex gap-2"
+              action="newsletter-success.html"
+              method="get"
+            >
+              <input
+                type="email"
+                name="email"
+                class="form-control"
+                placeholder="Email Address"
+                required
+                style="
+                  background-color: rgba(0, 0, 0, 0.3);
+                  border: 1px solid #444;
+                  color: #e8e5e1;
+                  border-radius: 0;
+                  font-size: 0.75rem;
+                "
+              />
+              <button
+                type="submit"
+                class="btn btn-orange"
+                style="padding: 8px 16px"
+              >
+                Join
+              </button>
+            </form>
+          </div>
+        </div>
+        <div
+          class="row pt-4 border-top"
+          style="border-color: rgba(255, 255, 255, 0.05) !important"
+        >
+          <div class="col-md-6 text-center text-md-start mb-2 mb-md-0">
+            <p
+              class="text-secondary small mb-0"
+              style="font-size: 0.65rem; font-weight: 300"
+            >
+              &copy; 2026 Runique Modern Filipino Kitchen. All rights reserved.
+            </p>
+          </div>
+          <div class="col-md-6 text-center text-md-end">
+            <a
+              href="privacy-policy.html"
+              class="footer-link small me-3"
+              style="font-size: 0.65rem; font-weight: 300"
+              >Privacy Policy</a
+            >
+            <a
+              href="terms.html"
+              class="footer-link small me-3"
+              style="font-size: 0.65rem; font-weight: 300"
+              >Terms of Service</a
+            >
+            <a
+              href="faq.html"
+              class="footer-link small"
+              style="font-size: 0.65rem; font-weight: 300"
+              >FAQ</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
